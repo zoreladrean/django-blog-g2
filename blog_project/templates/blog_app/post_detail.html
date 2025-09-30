@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ post.title }}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'blog_app/css/style.css' %}">
+</head>
+<body>
+  <a href="{% url 'blog_app:index' %}">← Back</a>
+  <h1>{{ post.title }}</h1>
+  <p><small>{{ post.created_at|date:"M d, Y H:i" }}</small></p>
+  <div>{{ post.content|linebreaks }}</div>
+</body>
+</html>
